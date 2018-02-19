@@ -49,7 +49,7 @@ export class DetailsOwnGamePage {
                     text: 'Borrar',
                     handler: () => {
                         console.log('Delete clicked');
-                        this.comunication.deleteGame(this.game.id).subscribe((data) => {
+                        this.comunication.deleteGame(this.game.idJuego).subscribe((data) => {
                             this.presentToast();
                             this.viewCtrl.dismiss(this.game.idJuego);
                         });
