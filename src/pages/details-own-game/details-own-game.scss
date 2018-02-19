@@ -1,0 +1,36 @@
+page-details-own-game {
+ img {
+   width: 100%;
+   height: 200px;
+   object-fit: cover;
+ }
+  .summary{
+    padding: 20px;
+    border-color: lightgray;
+    border-style: solid;
+    border-radius: 20px;
+    margin: 20px;
+    border-width: 1px;
+  }
+  .row-style{
+    position: absolute!important;
+    width: 100%!important;
+  top:calc(30% + 2px) !important;
+  background: white!important;
+    border-style: solid!important;
+    border-radius: 20px!important;
+    height: 45px!important;
+  }
+  .col-style{
+    border-right:1px solid;
+  }
+  .column__icon{
+    color:black;
+    font-size: 1.5em;
+  }
+  .column__text{
+    color:black;
+    font-size: 1.5em;
+  }
+}
+

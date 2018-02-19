@@ -1,0 +1,25 @@
+page-search {
+
+  .thumbnail img {
+    object-fit: cover;
+    height: 300px;
+    width: 350px;
+  }
+  .text-input-md {
+    /* margin: 13px 8px; */
+    /* border: 2px; */
+    border-style: solid;
+    border-color: grey;
+    border-width: 1px;
+    padding: 6px;
+    background-color: white;
+    word-break: break-all;
+    width: 500px;
+  }
+  .summary{
+    width: 350px;  }
+  .name{
+    width: 350px;
+  }
+
+}

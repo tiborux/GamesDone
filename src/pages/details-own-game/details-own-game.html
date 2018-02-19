@@ -1,0 +1,46 @@
+<!--
+  Generated template for the DetailsGamePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+    <ion-navbar>
+        <ion-title>{{game.juego.nombre}}</ion-title>
+        <ion-buttons end>
+            <button ion-button icon-only (click)="closeModal()">
+                <ion-icon item-right name="ios-close-outline"></ion-icon>
+            </button>
+        </ion-buttons>
+    </ion-navbar>
+
+</ion-header>
+
+
+<ion-content no-padding>
+
+    <div class="container">
+        <img src='https:{{game.juego.urlImagen}}'/>
+    </div>
+    <a >
+        <ion-row class="row-style">
+        <ion-col class="col-style" text-center>
+            <ion-icon name="star" class="column__icon"></ion-icon>
+            <span class="column__text">Nota: {{game.valoracion}}</span>
+        </ion-col>
+        <ion-col text-center>
+            <ion-icon name="clock" class="column__icon"></ion-icon>
+            <span class="column__text">Tiempo: {{game.tiempo}}h</span>
+        </ion-col>
+    </ion-row></a>
+    <p class="summary"text-justify>
+        {{game.juego.resumen}}
+    </p>
+    <ion-fab right bottom>
+        <button (click)="deleteGame()"ion-fab color="danger">
+            <ion-icon name="trash"></ion-icon>
+        </button>
+
+    </ion-fab>
+</ion-content>

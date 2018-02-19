@@ -1,0 +1,41 @@
+<!--
+  Generated template for the DetailsGamePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+    <ion-navbar>
+        <ion-title>Detalles</ion-title>
+        <ion-buttons end>
+            <button ion-button icon-only (click)="closeModal()">
+                <ion-icon item-right name="ios-close-outline"></ion-icon>
+            </button>
+        </ion-buttons>
+    </ion-navbar>
+
+</ion-header>
+
+
+<ion-content no-padding>
+    <div *ngIf='game.hdCover'>
+        <div align-self-center class="thumbnail">
+            <img src='https:{{game?.hdCover}}'/>
+        </div>
+    </div>
+    <div *ngIf='!game.hdCover'>
+        <div align-self-center class="thumbnail">
+            <img src='/assets/imgs/cover.jpeg'/>
+        </div>
+    </div>
+    <p class="summary"text-justify>
+        {{game?.summary}}
+    </p>
+    <ion-fab right bottom>
+        <button (click)="addGame()"ion-fab color="primary">
+            <ion-icon name="add"></ion-icon>
+        </button>
+
+    </ion-fab>
+</ion-content>

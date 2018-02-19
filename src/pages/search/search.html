@@ -1,0 +1,50 @@
+<ion-header>
+    <ion-navbar>
+        <ion-row align-items-center>
+            <ion-col col-3>
+                <ion-title>
+                    Buscar
+                </ion-title>
+            </ion-col>
+
+            <ion-col class="col__search__input" col-8>
+                <ion-input float-right placeholder="Escribe un juego" [(ngModel)]="game" (keyup.enter)="getGame()"></ion-input>
+            </ion-col>
+            <ion-col col-1>
+                <ion-icon name="search" (click)="getGame()"></ion-icon>
+            </ion-col>
+        </ion-row>
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <ion-grid>
+        <ion-row no-padding wrap>
+
+            <ion-list *ngFor="let game of games[0]">
+                <ion-col>
+                    <ion-card (click)="details(game)" *ngIf='game?.summary'>
+                        <ion-card-content>
+                            <div *ngIf='game.hdCover'>
+                                <div align-self-center class="thumbnail">
+                                    <img src='https:{{game?.hdCover}}'/>
+                                </div>
+                            </div>
+                            <div *ngIf='!game.hdCover'>
+                                <div align-self-center class="thumbnail">
+                                    <img src='/assets/imgs/cover.jpeg'/>
+                                </div>
+                            </div>
+                            <ion-card-title text-center class="name">
+                                {{game?.name}}
+                            </ion-card-title>
+                            <p text-justify class="summary">
+                                {{game?.summary.substring(0,100)}}...
+                            </p>
+                        </ion-card-content>
+                    </ion-card>
+                </ion-col>
+            </ion-list>
+        </ion-row>
+    </ion-grid>
+</ion-content>

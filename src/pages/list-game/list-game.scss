@@ -1,0 +1,42 @@
+page-list-game {
+  .thumbnail img {
+    object-fit: cover;
+    height: 300px;
+    width: 350px;
+  }
+  ion-card {
+    position: relative;
+    text-align: center;
+
+  }
+
+  .card-title {
+    position: absolute;
+    top: 20%;
+    font-size: 3.0em;
+    width: 100%;
+    font-weight: 800;
+    color: white;
+  }
+
+  .card-subtitle {
+    font-size: 3.0em;
+    position: absolute;
+    font-weight: 800;
+    top: 57%;
+    left: 42%;
+    /* width: 100%; */
+    color: white;
+    border-style: solid;
+    border-radius: 30px;
+    padding: 15px;
+
+  }
+  .background{
+    width: 350px;
+    height: 300px;
+    position: absolute;
+    background-color: grey;
+    opacity: 0.5;
+  }
+}
