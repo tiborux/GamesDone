@@ -13,6 +13,12 @@ export class ComunicationProvider {
     token: any;
 
     constructor(public http: Http, public api: ApiProvider, public storage: Storage) {
+
+    }
+
+
+    init() {
+        console.log("Aqui");
         this.storage.get(ENV.AuthKey).then((data) => {
             this.userId = data.userId;
             this.token = data.id;
@@ -22,8 +28,6 @@ export class ComunicationProvider {
             }
         );
     }
-
-
 
     private getOptions() {
         let headers = new Headers();
@@ -48,15 +52,16 @@ export class ComunicationProvider {
 
     }
 
-    getGames(){
-        return this.api.get(ENV.GET_GAMES(this.userId), {},this.getOptions()).map(resp => resp.json());
-    }
-    deleteGame(game){
-        return this.api.delete(ENV.DELETE_GAME(this.userId,game),this.getOptions()).map(resp => resp.json());
+    getGames() {
+        return this.api.get(ENV.GET_GAMES(this.userId), {}, this.getOptions()).map(resp => resp.json());
     }
 
-    getUsers(){
-        return this.api.get(ENV.GET_USERS, {},this.getOptions()).map(resp => resp.json());
+    deleteGame(game) {
+        return this.api.delete(ENV.DELETE_GAME(this.userId, game), this.getOptions()).map(resp => resp.json());
+    }
+
+    getUsers() {
+        return this.api.get(ENV.GET_USERS, {}, this.getOptions()).map(resp => resp.json());
 
     }
 

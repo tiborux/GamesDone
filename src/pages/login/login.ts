@@ -5,6 +5,7 @@ import {ENV} from "../../config/config.dev";
 import {AuthProviders} from "../../providers/auth";
 import {RegisterPage} from "../register/register";
 import { Storage } from '@ionic/storage';
+import {ComunicationProvider} from "../../providers/comunication";
 
 
 /**
@@ -30,7 +31,7 @@ export class LoginPage {
                 public toastCtrl: ToastController,
                 public loadingCtrl: LoadingController,
                 public auth: AuthProviders,
-                public storage: Storage) {
+                public storage: Storage,public comunication:ComunicationProvider) {
     }
 
     showLoader() {
@@ -43,14 +44,16 @@ export class LoginPage {
 
     }
 
+
     login() {
         this.showLoader();
+        console.log(this.credentials);
         this.auth.postData(this.credentials).then((result) => {
             let responseData = result;
             console.log(responseData);
             if(responseData){
                 this.storage.set(ENV.AuthKey, responseData).then(()=>{
-
+this.comunication.init();
                 });
                 this.navCtrl.setRoot(TabsPage);
             }

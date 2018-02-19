@@ -18,11 +18,11 @@ export class PerfilMenuPage {
     console.log('ionViewDidLoad PerfilMenuPage');
   }
 close(){
-    this.storage.clear().then(()=>{
-
-        this.navCtrl.setRoot(LoginPage);
-        this.navCtrl.push(LoginPage);
-
+    this.storage.remove(ENV.AuthKey).then(()=>{
+        this.storage.remove('games').then(()=>{
+                this.navCtrl.setRoot(LoginPage);
+                     this.navCtrl.push(LoginPage);
+        });
     });
 }
 }
